@@ -1,0 +1,127 @@
+html {
+    background: url(/static/images/hypnotize.png);
+    background-repeat: repeat;
+}
+
+body {
+    font-family: Roboto, Tahoma, sans-serif;
+    font-size: 2.3em;
+}
+
+.code {
+    font-family: Courier, monospace;
+    color: darkgreen;
+}
+
+.step {
+    position: relative;
+    width: 900px;
+    height: 700px;
+    padding: 0px 40px 40px 40px;
+    margin: 20px auto;
+    box-sizing:         border-box;
+    line-height: 1.5;
+}
+
+#introduction p {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+div #page_1 {
+    display: table;
+    margin: 0 auto;
+}
+div #page_1 p {
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+p:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+.panel {
+    display: block;
+    border: 5px solid lightgrey;
+    border-radius: 20px;
+    width: 900px;
+    height: 700px;
+    background-color: white;
+}
+
+/*
+ * animation for the intro images
+ */
+@keyframes introduction_image {
+    from { tranform: rotate(0deg); }
+    to { transform: rotate(15deg); }
+
+}
+
+#introduction img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: 10px solid grey;
+    padding: 10px;
+    background-color: white;
+    animation-name: introduction_image;
+    animation-delay: 3s;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#page_16 img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@keyframes spinner {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+    0% {
+        color: black;
+    }
+    100% {
+        color: red;
+        font-size: 2.6em;
+    }
+}
+
+#page_2.present span.fun {
+    display: inline-block;
+    position: relative;
+    animation-name: spinner;
+    animation-delay: 2s;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+}
+
+/*
+    And as the last thing there is a workaround for quite strange bug.
+    It happens a lot in Chrome. I don't remember if I've seen it in Firefox.
+    Sometimes the element positioned in 3D (especially when it's moved back
+    along Z axis) is not clickable, because it falls 'behind' the <body>
+    element.
+    To prevent this, I decided to make <body> non clickable by setting
+    pointer-events property to `none` value.
+    Value if this property is inherited, so to make everything else clickable
+    I bring it back on the #impress element.
+    If you want to know more about `pointer-events` here are some docs:
+    https://developer.mozilla.org/en/CSS/pointer-events
+    There is one very important thing to notice about this workaround - it makes
+    everything 'unclickable' except what's in #impress element.
+    So use it wisely ... or don't use at all.
+*/
+.impress-enabled                          { pointer-events: none }
+.impress-enabled #impress                 { pointer-events: auto }
+.impress-enabled #impress-toolbar         { pointer-events: auto }
+.impress-enabled #impress-console-button  { pointer-events: auto }

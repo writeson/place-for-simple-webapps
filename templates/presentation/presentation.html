@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Doug Farrell"
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" rel="stylesheet" type="text/css"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="static/css/presentation/presentation.css" rel="stylesheet">
+</head>
+<body class="impress-not-supported">
+    <div id="impress" data-transition-duration="500">
+        <div id="introduction" class="step slide panel" data-x="0" data-y="0" data-z="0">
+            <p>
+                Are your ready to have some fun!!
+            </p>
+            <div>
+                <img src="static/images/are_you_ready_to_have_fun.jpg" width="319" height="400" alt="are you ready to have fun" />
+            </div>
+        </div>
+        <div id="page_1" class="step slide panel" data-rel-x="500" data-rel-y="250" data-rel-z="-250" data-rotate-y="90">
+            <p>
+                Well, forget it, you're in the wrong presentation for that my friends!
+            </p>
+        </div>
+        <div id="page_2" class="step slide panel" data-rel-x="-500" data-rel-y="250" data-rel-z="-250" data-rotate-y="180">
+            <p>
+                I'm kidding slightly, and I hope you find this presentation interesting,
+                and possibly a little
+            </p>
+            <p>
+                <span class="fun">fun</span>.
+            </p>
+            <p>
+                If you're creating an application that requires user interaction,
+                you have a few choices. You can make a command line tool, which is
+                useful, but not very user friendly.
+            </p>
+        </div>
+        <div id="page_3" class="step slide panel" data-rel-x="-500" data-rel-y="250" data-rel-z="250" data-rotate-y="270">
+            <p>
+                You can create a full blown GUI tool, which is very user friendly.
+            </p>
+            <p>
+                However, it might be difficult to create the same GUI experience
+                on every platform your users might want to run it on.
+            </p>
+            <p>
+                Additionally, it can be difficult to keep a <q>thick app</q>
+                updated on every user machine where it's deployed as the
+                codebase advances.
+            </p>
+        </div>
+        <div id="page_4" class="step slide panel" data-rel-x="500" data-rel-y="250" data-rel-z="250" data-rotate-y="360">
+            <p>
+                You can create a web application.
+            </p>
+            <p>
+                Web applications have a couple of advantages over the previous
+                two worth mentioning. The UI interface and application framework
+                already exists on just about every user's platform; the web browser.
+            </p>
+            <p>
+                In addition, deploying and updating the application is as easy as
+                refreshing the page.
+            </p>
+        </div>
+        <div id="page_5" class="step slide panel" data-rel-x="500" data-rel-y="250" data-rel-z="-250" data-rotate-y="450">
+            <p>
+                I think there is a place for good looking, single page applications
+                made with just HTML, CSS, and JavaScript. They are easy enough
+                to create, and not so effort intense you'd think
+                twice about replacing them with something more robust, like React,
+                should the application become popular.
+            </p>
+            <p>
+                That's what this presentation is about, creating these kinds
+                of applications.
+            </p>
+        </div>
+        <div id="page_6" class="step slide panel" data-x="3000" data-y="0" data-z="0" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0">
+            <p>
+                As we go along we'll be doing two things, using CSS
+                to style a simple web application, and using JavaScript
+                to add interactivity to the application.
+            </p>
+            <p>
+                If you do want to follow along, you can load our starting point
+                here:
+                <a href="http://plantdev04-lv.internal.shutterfly.com:5000/version_1">
+                    plantdev04-lv.internal.shutterfly.com:5000/version_1
+                </a>
+            </p>
+            <p>
+                This website hosts a plain web page we're going to
+                turn into a web application.
+            </p>
+        </div>
+        <div id="page_7" class="step slide panel" data-rel-x="1000" data-rel-y="1000" data-rel-z="-500" data-rotate-z="90">
+            <p>
+                This page has HTML elements in it commonly used in many web pages:
+                <ul>
+                    <li>H1 Header Element</li>
+                    <li>UL List Element</li>
+                    <li>Table Element</li>
+                    <li>Input Element</li>
+                    <li>Button Element</li>
+                </ul>
+                We're going to style these elements to create a pretty nice interface, and then
+                add interactivity to it.
+            </p>
+        </div>
+        <div id="page_8" class="step slide panel"  data-rel-x="-1000" data-rel-y="1000" data-rel-z="-500" data-rotate-z="180">
+            <p>
+                Though modern browsers are getting better, they don't all render HTML the
+                same way.
+                Their default rendering settings can vary, so html can look
+                different between browsers.
+            </p>
+            <p>
+                To level the playing field the first thing we're going to do is
+                import the <span class="code">normalize.css</span> file from a CDN.
+                This file sets default
+                styles as much as possible across all browsers. Navigate to
+                <span class="code">version_2</span> to see the results.
+            </p>
+        </div>
+        <div id="page_9" class="step slide panel" data-rel-x="-1000" data-rel-y="-1000" data-rel-z="-500" data-rotate-z="270">
+            <p>
+                Comparing <span class="code">version_1</span> and <span class="code">version_2</span>
+                there isn't much
+                difference between them visually. As I mentioned,
+                the browsers are getting better at consistent rendering.
+            </p>
+            <p>
+                However, adding <span class="code">normalize.css</span> pays off as
+                we start to style our
+                page with CSS by keeping us from chasing minor differences in appearance
+                across browsers.
+            </p>
+        </div>
+        <div id="page_10" class="step slide panel" data-rel-x="1000" data-rel-y="-1000" data-rel-z="-500" data-rotate-z="360">
+            <p>
+                View the source of the page and you'll notice I've imported
+                the Roboto fonts from the Google font server. But why hasn't our page
+                changed to reflect this. Let's create our first CSS style to
+                change this. I've also imported <span class="code">home.css</span>, which we'll
+                use to play around with.
+            </p>
+            <p>
+                If you're following along with the Chrome browser, open up the
+                Developer Tools and click the "Sources" menu item along the top.
+                Navigate to the <span class="code">home.css</span> file.
+            </p>
+        </div>
+        <div id="page_11" class="step slide panel" data-rel-x="1000" data-rel-y="1000" data-rel-z="-500" data-rotate-z="450">
+            <p>
+                Applying CSS styles to a page really has two parts, knowing what styles to
+                apply, and how to select an element from the page to apply it to. Right now we just want
+                to add some minor styling to the entire page. In the Chrome debugger add the following
+                to the <span class="code">home.css</span> file:
+            </p>
+            <pre>
+                <code class="css">
+body {
+    font-family: Roboto, Tahoma, sans-serif;
+    font-size: 16px;
+    background-color: floralwhite;
+}
+                </code>
+            </pre>
+        </div>
+        <div id="page_12" class="step slide panel" data-rel-x="-1000" data-rel-y="1000" data-rel-z="-500" data-rotate-z="540">
+            <p>
+                You should see the application page change immediately as you enter the
+                above CSS styling. This is a pretty good way to develop CSS code as you
+                can see the effects of your actions immediately.
+            </p>
+            <p>
+                In this case we've applied CSS styles to the <span class="code">body</span> html tag. We've used
+                <span class="code">body</span> as the <i>selector</i> our CSS styles will be applied to
+                when the browser renders the page. This also means all the children of the
+                <span class="code">body</span> tag will inherit it's styles.
+
+            </p>
+        </div>
+        <div id="page_13" class="step slide panel" data-rel-x="-1000" data-rel-y="-1000" data-rel-z="-500" data-rotate-z="630">
+            <p>
+                Using HTML tags as selectors works fine for a lot of our styling needs, but often
+                you'll need to select specific elements in a page. This is where the <span class="code">id</span>
+                and <span class="code">class</span> attributes are useful.
+            </p>
+            <p>
+                The <span class="code">id</span> attribute is used to identify a single tag within
+                your HTML. For the most part I use <span class="code">id</span> attributes to
+                identify HTML elements that accept user input. Things like input fields, drop down
+                select boxes, etc.
+            </p>
+        </div>
+        <div id="page_14" class="step slide panel" data-rel-x="1000" data-rel-y="-1000" data-rel-z="-500" data-rotate-z="720">
+            <p>
+                The <span class="code">class</span> attribute is very useful, often moreso than
+                <span class="code">id</span> for two reasons:
+                <ul>
+                    <li>
+                        It supports multiple values within the attribute and you can select on any of them.
+                    </li>
+                    <li>
+                        The same value can exist in multiple <span class="code">class</span> attributes,
+                        which makes it easy to select multiple HTML tags.
+                    </li>
+                </ul>
+                Let's move to version_3 of the application and complete the CSS to style the app.
+            </p>
+        </div>
+        <div id="page_15" class="step slide panel" data-x="0" data-y="-1000" data-z="1000" data-rotate-z="0">
+            <p>
+                Now that we have our web application styled, let's make it interactive with
+                JavaScript. If you navigate to version_4 of the application it contains all
+                of the CSS styling for our application.
+            </p>
+            <p>
+                View the source
+                you'll notice it now pulls in the <span class="code">jQuery</span> JavaScript
+                library. It also pulls in <span class="code">home.js</span>, which is where we'll
+                add our web application specific JavaScript code.
+            </p>
+        </div>
+        <div id="page_16" class="step slide panel" data-rel-x="1000">
+            <p>
+                The asynchronous nature of JavaScript web application code
+                can quickly become a mess. To help control that I'll present a
+                little MVC framework that helps create separation of concerns. Conceptually
+                this framework looks like this:
+            </p>
+            <img src="https://files.realpython.com/media/mvc.b7675fb5f043.png" width="350">
+        </div>
+        <div id="page_17" class="step slide panel" data-rel-x="1000">
+            <p>
+                The Controller runs the show, and it has strong links to both
+                the Model and View. It's primary job is to orchestrate the events
+                happening in the application, like the user clicking buttons,
+                entering data, etc.
+            </p>
+            <p>
+                When the Controller is created it is passed the existing Model and View
+                instance variables so it can call their public interfaces directly.
+            </p>
+        </div>
+        <div id="page_18" class="step slide panel" data-rel-x="1000">
+            <p>
+                The Model is responsible for all data interaction. Any data presented
+                to the user comes from the model. Any data created or updated by the
+                user goes through the model.
+            </p>
+            <p>
+                For the most part this means the Model is responsible for interacting
+                with the API's provided by the server/service where the data
+                originates and is persisted.
+            </p>
+        </div>
+        <div id="page_19" class="step slide panel" data-rel-x="1000">
+            <p>
+                The View is responsible for updating the HTML DOM elements and
+                changing what's displayed to the user. Any user interaction that
+                changes the display is captured by the Controller, which then
+                makes calls to the view to update the display accordingly.
+            </p>
+        </div>
+        <div id="page_20" class="step slide panel" data-rel-x="1000">
+            <p>
+                In our application the server provides a simple HTTP API
+                that transforms the user input data with some string and
+                mathmatical operations, and returns the results as JSON
+                data.
+            </p>
+            <p>
+                The Model accesses this API using the jQuery
+                <span class="code">$.ajax(options)</span>
+                method, which is an asynchronous operation.
+            </p>
+        </div>
+        <div id="page_21" class="step slide panel" data-rel-x="1000">
+            <p>
+                To handle this the <span class="code">$.ajax(options)</span> call
+                returns something called a <span class="code">Promise</span>. This
+                means the system promises to "call us back" when the operation is
+                complete.
+            </p>
+            <p>
+                The Model returns the Promise to the Controller, which will
+                act on either the success or failure of the action. This is the
+                weak link between the Model and Controller.
+            </p>
+        </div>
+        <div id="page_22" class="step slide panel" data-rel-x="1000">
+            <p>
+                The Controller will attach functions to the <span class="code">done</span>
+                and <span class="code">fail</span> methods of the Promise.
+            </p>
+            <p>
+                For a <span class="code">done</span> action the Controller will
+                pass the data onto the View to update the display.
+            </p>
+            <p>
+                For a <span class="code">fail</span> action the Controller simply
+                outputs to the console the failure information.
+            </p>
+        </div>
+        <div id="page_23" class="step slide panel" data-x="2000" data-y="0" data-z="4000" data-rotate-z="360">
+            <p>
+                I'm going to put this presentation, including the server and code, in
+                our GitHub system so you could clone it and take a look at it
+                more closely if you'd like.
+            </p>
+            <p>
+                <b>In the meantime, thanks for your attention!</b>
+            </p>
+        </div>
+    </div>
+    <script src="static/js/presentation/impress.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script>
+        impress().init();
+        hljs.initHighlightingOnLoad();
+    </script>
+</body>
+</html>
